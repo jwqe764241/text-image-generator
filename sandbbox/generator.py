@@ -13,7 +13,7 @@ class TextImageGenerator:
 		else :
 			raise TypeError("font must be instance of ImageFont.FreeTypeFont")
 
-	def generate(self, text, mode='RGB', color=(0, 0, 0), bgcolor=(255, 255, 255), transforms = None):
+	def generate(self, text, mode='RGB', color=(0, 0, 0, 0), bgcolor=(255, 255, 255, 255), transforms = None):
 		textsize = self.__font.getsize(text)
 		image = Image.new(mode, textsize, bgcolor)
 		image_draw = ImageDraw.Draw(image)

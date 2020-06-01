@@ -23,7 +23,7 @@ class Padding(Transform):
 		self.__left = left
 		self.__right = right
 	
-	def transform(self, image, fillcolor=(255, 255, 255)):
+	def transform(self, image, fillcolor=(255, 255, 255, 255)):
 		width, height = image.size
 		new_width = width + self.__left + self.__right
 		new_height = height + self.__top + self.__bottom
