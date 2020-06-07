@@ -1,9 +1,9 @@
 from datetime import datetime
 from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
 
-from generator import TextImageGenerator
-from transform import Rotate, Padding
-from character import get_actually_used_hangul, get_english_alphabet
+from Txt2img.generator import TextImageGenerator
+from Txt2img.transform import Rotate, Padding
+from Txt2img.character import get_actually_used_hangul, get_english_alphabet
 
 texts = ["아야어여오요우유으이가나다라마",
 		"안녕하세요 저는 김기준입니다.",
