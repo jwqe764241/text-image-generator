@@ -1,7 +1,7 @@
 from datetime import datetime
 from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
 
-from Txt2img.generator import TextImageGenerator
+from Txt2img.generator import Generator
 from Txt2img.transform import Rotate, Padding
 from Txt2img.character import get_actually_used_hangul, get_english_alphabet
 
@@ -11,7 +11,7 @@ texts = ["아야어여오요우유으이가나다라마",
 		"ㄴ미ㅏ엄니엄니ㅏ;어민어;민"]
 path = "C:\\Users\\jwqe764241\\Desktop\\images"
 
-generator = TextImageGenerator(ImageFont.truetype(font="H2GTRE.TTF", size=30))
+generator = Generator(ImageFont.truetype(font="H2GTRE.TTF", size=30))
 
 actually_used_hangul = get_actually_used_hangul()
 english_alphabet = get_english_alphabet()

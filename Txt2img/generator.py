@@ -1,6 +1,6 @@
 from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
 
-class TextImageGenerator:
+class Generator:
 	def __init__(self, font):
 		try:
 			self.setfont(font)
