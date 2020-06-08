@@ -7,7 +7,7 @@ class Generator:
 		except TypeError:
 			raise
 
-	def setfont(self, font):
+	def set_font(self, font):
 		if isinstance(font, ImageFont.FreeTypeFont) :
 			self.__font = font
 		else :

@@ -30,6 +30,3 @@ class Padding(Transform):
 		new_image = Image.new(image.mode, (new_width, new_height), fillcolor)
 		new_image.paste(image, (self.__left, self.__top))
 		return new_image
-
-
-	
