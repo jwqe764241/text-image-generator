@@ -3,7 +3,7 @@ from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
 class Generator:
 	def __init__(self, font):
 		try:
-			self.setfont(font)
+			self.set_font(font)
 		except TypeError:
 			raise
 
