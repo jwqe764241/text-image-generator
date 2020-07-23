@@ -1,4 +1,6 @@
-#실제 사용되는 한글 단어 하드코딩
+#module for getting characters for test text image generator
+
+#all hangul characters that actually used
 actually_used_hangul = "가각간갇갈갉갊감갑값갓갔강갖갗같갚갛개객갠갵갬갭갯갰갱갸갹갼걀걑걍걔걘걭거걱건걷거걸걺검겁것것겅겆겉겊겋게겐겔겜겝겟겠겡겨격격견"\
 						 "겯결겸겹겻겻경곁계곈곌곕곗고곡곤곧골곪곬곯곰곱곳공곶과곽관괄괆괌괍괏광괘괜괠괩괬괭괴괵괸괼굄굅굇굉교굔굘굡굣구국군굳굴굵굶굻굼굽"\
 						 "굿궁궂궈궉괏굉교굔굘굡굣구국군굳굴굵굶굻굼굽굿궁궂궈궉권궐궛궝궤궷귀귁귄귈귐귑귓규균귤그극근귿글긁금급긋긍긔기긱긴긷길긺김깁깃깅"\
@@ -38,27 +40,27 @@ actually_used_hangul = "가각간갇갈갉갊감갑값갓갔강갖갗같갚갛�
 						 "혹혼홀홅홈홉홋홍홑화확환활홧황홰홱홴횃횅회획횐횔횝횟횡효횬횰횹횻후훅훈훌훑훔훗훙휘휜휠휨휭훼훽휀휄휑휘휙휜휠휨휩휫휭휴휵휸휼흄흇"\
 						 "흉흐흑흔흖흗흘흙흠흡흣흥흩희흰흴흼흽힁히힉힌힐힘힙힛힝"
 
-#특정 범위의 유니코드값 글자 가져오기
+#get unicode characters between range1 and range2
 def get_unicode_chars(range1, range2) :
 	return [chr(a) for a in range(range1, range2)]
 
-#실제 사용되는 한글 가져오기
+#get all actually used hangul characters
 def get_actually_used_hangul() : 
 	return [*actually_used_hangul]
 
-#모든 한글 가져오기
+#get all hangul characters
 def get_hangul() :
 	return get_unicode_chars(44032, 55215)
 
-#대문자 영어 알파벳 가져오기
+#get all upper case alphabet
 def get_upper_english_alphabet() :
 	return get_unicode_chars(65, 91)
 
-#소문자 영어 알파벳 가져오기
+#get all lower case alphabet
 def get_lower_english_alphabet() :
 	return get_unicode_chars(97, 123)
 
-#모든 영어 알파벳 가져오기
+#get all alphabet
 def get_english_alphabet() :
 	upper = get_upper_english_alphabet()
 	lower = get_lower_english_alphabet()

@@ -1,11 +1,11 @@
 from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
 
-#이미지 변형 인터페이스
+#interface for transform text image
 class Transform:
 	def transform(self, image):
 		pass
 
-#이미지 회전
+#rotate image
 class Rotate(Transform):
 	def __init__(self, angle, resample=Image.NEAREST, expand=0, center=None, translate=None, fillcolor=None):
 		self.__angle = angle
@@ -18,7 +18,7 @@ class Rotate(Transform):
 	def transform(self, image):
 		return image.rotate(self.__angle, resample=self.__resample, expand=self.__expand, center=self.__center, translate=self.__translate, fillcolor=self.__fillcolor)
 
-#이미지 여백
+#add padding at image
 class Padding(Transform):
 	def __init__(self, top=0, bottom=0, left=0, right=0):
 		self.__top = top

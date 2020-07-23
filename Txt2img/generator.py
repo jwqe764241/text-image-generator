@@ -1,6 +1,6 @@
 from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
 
-#텍스트 이미지 생성기
+#class for generate text image
 class Generator:
 	def __init__(self, font):
 		try:
@@ -8,14 +8,14 @@ class Generator:
 		except TypeError:
 			raise
 	
-	#폰트 설정
+	#set font
 	def set_font(self, font):
 		if isinstance(font, ImageFont.FreeTypeFont) :
 			self.__font = font
 		else :
 			raise TypeError("font must be instance of ImageFont.FreeTypeFont")
 
-	#이미지 생성
+	#generate text image
 	def generate(self, text, mode='RGB', color=(0, 0, 0, 0), bgcolor=(255, 255, 255, 255), transforms = None):
 		textsize = self.__font.getsize(text)
 		image = Image.new(mode, textsize, bgcolor)
