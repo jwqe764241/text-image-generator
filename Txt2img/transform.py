@@ -1,4 +1,6 @@
 from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
+import numpy as np
+import cv2
 
 #interface for transform text image
 class Transform:
@@ -33,3 +35,19 @@ class Padding(Transform):
 		new_image = Image.new(image.mode, (new_width, new_height), fillcolor)
 		new_image.paste(image, (self.__left, self.__top))
 		return new_image
+
+#add gaussian noise at image
+class GaussianNoise(Transform):
+	def __init__(self, mean, std):
+		self.__mean = mean
+		self.__std = std
+
+	def transform(self, image):
+		cv_image = np.asarray(image)
+
+		noise =  np.random.normal(self.__mean, self.__std, size=cv_image.shape)
+		noise = noise.astype(cv_image.dtype)
+
+		cv_image = cv_image + noise
+
+		return Image.fromarray(cv_image)

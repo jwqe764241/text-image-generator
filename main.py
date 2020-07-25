@@ -2,7 +2,7 @@ from datetime import datetime
 from PIL import Image, ImageColor, ImageFont, ImageDraw, ImageFilter
 
 from Txt2img.generator import Generator
-from Txt2img.transform import Rotate, Padding
+from Txt2img.transform import Rotate, Padding, GaussianNoise
 from Txt2img.character import get_actually_used_hangul, get_english_alphabet
 
 texts = ["아야어여오요우유으이가나다라마",
@@ -20,7 +20,8 @@ for i in range(len(texts)):
 	image = generator.generate(texts[i], 'RGB', (0, 0, 0), (255, 255, 255),
 	[
 		Rotate(45, resample=Image.BILINEAR, expand=True, fillcolor=(255, 255, 255)),
-		Padding(100, 10, 100, 10)
+		Padding(10, 10, 10, 10),
+		GaussianNoise(0, 0.6)
 	])
 	dt = datetime.now()
 	image.save(path + "\\" + dt.strftime("%Y.%m.%d %H.%M.%S.%f") + ".jpg", quality=100)
